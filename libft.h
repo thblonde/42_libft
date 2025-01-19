@@ -61,5 +61,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 int					ft_strcmp(char *s1, char *s2);
 int					ft_strncmp(char *s1, char *s2, unsigned int n);
-int				ft_isspace(char c);
+int					ft_isspace(char c);
+int					ft_strslen(char **strs);
+
 #endif
