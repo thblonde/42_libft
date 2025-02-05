@@ -1,10 +1,12 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <fcntl.h>
-# include <stddef.h>
-# include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -63,5 +65,16 @@ int					ft_strcmp(char *s1, char *s2);
 int					ft_strncmp(char *s1, char *s2, unsigned int n);
 int					ft_isspace(char c);
 int					ft_strslen(char **strs);
+
+/* ft_printf */
+int					ft_printf(const char *s, ...);
+void				string(va_list arg, int *pcount);
+void				pointer(va_list arg, int *pcount);
+void				integer(va_list arg, int *pcount);
+void				unsigned_int(va_list arg, int *pcount);
+void				hexadecimal(va_list arg, int *pcount, char c);
+void				ft_putnbr_base(int nbr, const char *base, int *pcount);
+int					countdigits(int n);
+void				ft_putnbr_fd(int n, int fd);
 
 #endif

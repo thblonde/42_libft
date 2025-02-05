@@ -11,7 +11,8 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
       ft_lstiter.c ft_lstmap.c \
       ft_strcmp.c ft_strncmp.c \
       ft_isspace.c \
-      ft_strslen.c
+      ft_strslen.c \
+      ft_printf/ft_printf.c ft_printf/format.c ft_printf/utils.c
 
 OBJ = $(SRC:%.c=obj/%.o)
 
@@ -21,7 +22,7 @@ $(NAME): $(OBJ)
 	@ar rcs $@ $(OBJ)
 
 obj/%.o: %.c
-	@mkdir -p obj
+	@mkdir -p $(dir $@)
 	@cc $(CFLAGS) -c $< -o $@
 
 clean:
