@@ -1,11 +1,11 @@
 #include "libft.h"
 
-int ft_strslen(char **strs)
+int	ft_strslen(char **strs)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (strs[i])
-        i++;
-    return (i);
+	i = 0;
+	while (strs[i])
+		i++;
+	return (i);
 }

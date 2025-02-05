@@ -1,12 +1,16 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <unistd.h>
 # include <fcntl.h>
-# include <stdlib.h>
-# include <stddef.h>
 # include <stdarg.h>
+# include <stddef.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 512
+# endif
 
 typedef struct s_list
 {
@@ -76,5 +80,13 @@ void				hexadecimal(va_list arg, int *pcount, char c);
 void				ft_putnbr_base(int nbr, const char *base, int *pcount);
 int					countdigits(int n);
 void				ft_putnbr_fd(int n, int fd);
+
+/* get_next_line */
+char				*get_next_line(int fd);
+int					gnl_strlen(char *str);
+char				*gnl_strchr(char *s, int c);
+char				*gnl_strcpy(char *dst, char *src);
+char				*gnl_strjoin(char *s1, char *s2);
+char				*gnl_substr(char *s, unsigned int start, int len);
 
 #endif
